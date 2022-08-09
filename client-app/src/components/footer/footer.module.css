@@ -1,0 +1,12 @@
+.mainFooter{
+    width: 100%;
+    left: 0;
+    height: 10em;
+    bottom: 0;
+    background-color: yellow;
+}
+
+.footer{
+    color: black;
+    font-size: 5em;
+}

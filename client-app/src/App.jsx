@@ -13,6 +13,7 @@ import PrivateAdminRoute from "./components/privateRoute/privateAdminRoute";
 import Mujer from "./components/pages/mujer/mujer.jsx";
 import Hombre from "./components/pages/hombre/hombre";
 import EditItem from "./components/pages/editItem/editItem";
+import Footer from "./components/footer/footer";
 
 function App() {
   const isLogged = useSelector((state) => state.reducerCompleto.isLogged);
@@ -27,58 +28,63 @@ function App() {
       <div className="navbar">
         <Navbar />
       </div>
-      <Routes>
-        <Route
-          path="/login"
-          element={
-            <div className="page">
-              <Login />
-            </div>
-          }
-        />
-        <Route
-          path="/"
-          element={
-            <div className="page">
-              <Home />
-            </div>
-          }
-        />
-        <Route
-          path="/mujer"
-          element={
-            <div className="page">
-              <Mujer />
-            </div>
-          }
-        />
-        <Route
-          path="/hombre"
-          element={
-            <div className="page">
-              <Hombre />
-            </div>
-          }
-        />
-        <Route element={<PrivateRoute isLogged={isLogged} />}>
+      <div className="contentWrap">
+        <Routes>
           <Route
-            path="/admin"
+            path="/login"
             element={
               <div className="page">
-                <AdminPage />
+                <Login />
               </div>
             }
           />
           <Route
-            path="/admin/edit"
+            path="/"
             element={
               <div className="page">
-                <EditItem />
+                <Home />
               </div>
             }
           />
-        </Route>
-      </Routes>
+          <Route
+            path="/mujer"
+            element={
+              <div className="page">
+                <Mujer />
+              </div>
+            }
+          />
+          <Route
+            path="/hombre"
+            element={
+              <div className="page">
+                <Hombre />
+              </div>
+            }
+          />
+          <Route element={<PrivateRoute isLogged={isLogged} />}>
+            <Route
+              path="/admin"
+              element={
+                <div className="page">
+                  <AdminPage />
+                </div>
+              }
+            />
+            <Route
+              path="/admin/edit"
+              element={
+                <div className="page">
+                  <EditItem />
+                </div>
+              }
+            />
+          </Route>
+        </Routes>
+      </div>
+      <div className="footer">
+        <Footer />
+      </div>
     </div>
   );
 }
