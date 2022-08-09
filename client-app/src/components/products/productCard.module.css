@@ -1,0 +1,72 @@
+.grid {
+    width: 100%;
+    height: 50em;
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    grid-auto-rows: 15em;
+    row-gap: 12em;
+    margin-bottom: 10em;
+    
+    
+}
+.productContainer{
+    display: flex;
+    width: 60%;
+    min-height: 15em;
+    margin-top: 4em;
+    justify-content: center;
+    margin-left: 5em;
+    margin-right: 5em;
+
+}
+
+.productContainer img{
+    width: 18em;
+    height: 23em;
+    transition: opacity .1s;
+}
+
+.description {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    line-height: 0em;
+    font-size: 1.3em;
+    margin-left: 0.5em;
+    margin-top: 6.7em;
+    opacity: 0;
+    text-align: center;
+    transition: opacity .1s;
+
+    
+}
+
+.productContainer img:hover{
+    opacity: 0.4;
+    transition: opacity .5s;
+}
+
+.productContainer:hover .description{
+    opacity: 1;
+    transition: opacity .5s;
+}
+
+
+.buttons{
+    position: absolute;
+    display: flex;
+    align-self: center;
+    gap:18em;
+}
+
+.notButtons{
+    display: none;
+    pointer-events: none;
+}
+
+.buttons button{
+    background: none;
+    font-size: 2em;
+    border: none;
+    cursor: pointer;
+}

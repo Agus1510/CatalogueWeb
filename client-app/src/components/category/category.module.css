@@ -1,0 +1,108 @@
+
+.flexContainer{
+    display: flex;
+    width: 100%;
+    height: 30em;
+    background-color: rgb(247, 247, 247);
+    position: absolute;
+    border-top: solid 1px black;
+    flex-direction: row;
+}
+
+.firstColumn{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+}
+
+
+.firstColumn a{
+    width: 70%;
+    height: 45%;
+}
+
+.Container{
+    width: 100%;
+    height: 100%;
+    border-radius: .5em;
+    cursor: pointer;
+}
+
+.Container2{
+    display: flex;
+    width: 70%;
+    height: 45%;
+    border-radius: .5em;
+    justify-content: center;
+    align-items: center;
+    background: rgb(252,252,252);
+background: linear-gradient(276deg, rgba(247, 247, 247,1) 0%, rgba(203,203,203,1) 97%);
+}
+.Container3{
+    display: flex;
+    width: 70%;
+    height: 45%;
+    border-radius: .5em;
+    justify-content: center;
+    align-items: center;
+    background: rgb(252,252,252);
+background: linear-gradient(276deg, rgba(203,203,203,1) 0%, rgba(247, 247, 247,1) 97%);
+}
+
+.Container img {
+    width: 100%;
+    height: 100%;
+    border-radius: .5em;
+}
+.firstColumn button{
+    background:none;
+    border:none ;
+    color: rgb(116, 116, 116);
+    border-bottom: 1px solid black;
+    font-size: 3em;
+    cursor: pointer;
+
+}
+
+.firstColumn button:hover{
+    color: rgb(169, 169, 169);
+}
+
+.secondColumn{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-items: center;
+}
+
+.secondColumn h2{
+    font-family: 'Ubuntu', sans-serif;
+    width: 90%;
+    margin-left: 2em;
+    margin-top: 2em;
+    font-weight: 400;
+    border-bottom: 1px solid black;
+}
+
+.categories{
+    display: grid;
+    width: 100%;
+    margin-left: 27%;
+    grid-template-columns: repeat(2, 50%);
+    font-size: 1.2em;
+    font-weight: 300;
+}
+
+.categories a{
+    text-decoration: none;
+    color: black;
+    line-height: 2em;
+}
+
+.gender{
+    display: flex;
+    flex-direction: column;
+}

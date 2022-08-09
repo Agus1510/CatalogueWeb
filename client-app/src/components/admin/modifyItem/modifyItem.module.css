@@ -1,0 +1,57 @@
+.flexContainer{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.productContainer{
+    display: flex;
+    width: 100%em;
+    height: 10em;
+    margin-top: 4em;
+    justify-content: center;
+
+}
+
+.productContainer img{
+    width: 18em;
+    height: 23em;
+    transition: opacity .1s;
+}
+
+.description {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    line-height: 0em;
+    font-size: 1.3em;
+    margin-left: 0.5em;
+    opacity: 0;
+    transition: opacity .1s;
+
+    
+}
+
+.productContainer img:hover{
+    opacity: 0.4;
+    transition: opacity .5s;
+}
+
+.productContainer:hover .description{
+    opacity: 1;
+    transition: opacity .5s;
+}
+
+.grid {
+    width: 100%;
+    height: 50em;
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    grid-auto-rows: 15em;
+    row-gap: 10em;
+    column-gap: 1em;
+    margin-bottom: 10em;
+    
+}

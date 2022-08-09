@@ -1,0 +1,63 @@
+.flexContainer{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}
+
+.productContainer{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgb(249, 249, 249);
+
+}
+
+.productContainer img{
+    width: 50%;
+    margin-top: 1em;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.form input{
+    border: none;
+    text-align: center;
+    margin-top: 1em;
+    font-size: 1.4em;
+    background: none;
+}
+
+.back{
+    display: flex;
+    font-size: 1.5em;
+}
+
+.back a{
+    text-decoration: none;
+    left:  0;
+    color: black;
+    margin-top: 2em;
+}
+
+.button{
+    align-self: center;
+    margin-top: 1em;
+    width: 10em;
+    background: none;
+    border-radius: .3em;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.button:hover{
+    background-color: azure;
+}

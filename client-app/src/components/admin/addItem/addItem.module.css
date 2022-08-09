@@ -1,0 +1,59 @@
+.form {
+  width: 100%;
+  min-height: 100%;
+    display: flex;
+    padding: 0.5em;
+    flex-direction: column;
+    gap: 1em;
+
+  }
+  
+  
+  .input {
+   width: 52%;
+   height: 1.5em;
+   display: flex;
+   color: rgb(65, 65, 65);
+  }
+
+  .checkBox {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 23%);
+    color: rgb(192, 0, 0);
+   
+   }
+
+   .checkBox input{
+     width: 1.3em;
+     height: 1.3em;
+   }
+
+  .inputImage {
+    width: 50%;
+    display: flex;
+   }
+
+  .flexContainer {
+    box-sizing: border-box;
+    width: 150%;
+    min-height: 35em;
+    display: flex;
+    margin-bottom: 0em;
+    margin-top: 8%;
+    border-radius: .5em;
+    background-color: rgb(249, 249, 249);
+    justify-content: center;
+  }
+
+.title{
+    width: 10em;
+    text-decoration: underline 1px black;
+}
+  
+.button2{
+  width: 5em;
+  align-self: center;
+}
+
+  
