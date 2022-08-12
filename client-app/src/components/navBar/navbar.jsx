@@ -452,7 +452,9 @@ function Navbar() {
             className={style.inputSearch}
           ></input>
         </div>
-        <IoLocationOutline />
+        <a href="#footer">
+          <IoLocationOutline />
+        </a>
         <NavLink to="/">
           <IoHomeOutline />
         </NavLink>

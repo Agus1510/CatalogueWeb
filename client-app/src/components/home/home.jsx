@@ -8,7 +8,7 @@ function Home() {
   const portada = useSelector((state) => state.reducerCompleto.portada);
   console.log(portada);
   return (
-    <div className={style.flexContainer}>
+    <div id="home" className={style.flexContainer}>
       <div className={style.container}>
         <img src={portada} alt="img" referrerPolicy="no-referrer" />
       </div>
