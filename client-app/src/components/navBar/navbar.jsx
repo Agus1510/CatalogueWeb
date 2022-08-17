@@ -11,11 +11,16 @@ import { NavLink } from "react-router-dom";
 import Category from "../category/category";
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { getProductsByGender } from "../../../redux/actions";
+import {
+  getAllProducts,
+  getProductsByGender,
+  getProductsByName,
+} from "../../../redux/actions";
 
 function Navbar() {
   const dispatch = useDispatch();
   const [active, setActive] = useState(false);
+  const [searchError, setSearchError] = useState({});
   const [objCat, setObjCat] = useState({
     img1: "https://taverniti.vteximg.com.br/arquivos/ids/236530/banner1.png?v=637901136712470000",
     img2: "https://taverniti.vteximg.com.br/arquivos/ids/237267/banner2.png?v=637901137146830000",
@@ -393,6 +398,22 @@ function Navbar() {
     });
   }, []);
 
+  const search = async (e) => {
+    // SETEA TODOS LOS FILTROS/SORTS A false
+    if (e.target.value != "") {
+      const dis = await dispatch(getProductsByName(e.target.value));
+      const data = dis.payload;
+
+      if (!data.success) {
+        setSearchError({ err: data.info });
+      } else {
+        setSearchError({});
+      }
+    } else {
+      dispatch(getAllProducts());
+    }
+  };
+
   return (
     <div className={style.flexContainer}>
       <div className={style.flexButtons1}>
@@ -445,12 +466,17 @@ function Navbar() {
       </div>
       <div className={style.flexButtons2}>
         <div className={style.search}>
-          <IoSearchOutline />
-          <input
-            type="text"
-            placeholder="Buscar."
-            className={style.inputSearch}
-          ></input>
+          <form onChange={(e) => search(e)} className={style.form}>
+            <IoSearchOutline />
+            <input
+              type="text"
+              placeholder="Buscar."
+              className={style.inputSearch}
+            />
+            {searchError.err && (
+              <label className={style.errSearch}>{searchError.err}</label>
+            )}
+          </form>
         </div>
         <a href="#footer">
           <IoLocationOutline />

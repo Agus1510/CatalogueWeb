@@ -180,6 +180,7 @@ export const getAllProducts = createAsyncThunk(
     try {
       const metaData = await axios(`/tienda/product`);
       thunkAPI.dispatch(setAllProducts(metaData.data));
+      thunkAPI.dispatch(setFilteredProducts(metaData.data));
     } catch (err) {
       console.log(err);
     }
@@ -372,6 +373,20 @@ export const editImage = createAsyncThunk(
       return metaData.data;
     } catch (err) {
       console.log(err);
+      return err.response.data;
+    }
+  }
+);
+
+export const getProductsByName = createAsyncThunk(
+  "/cursos/:name",
+  async (name, thunkAPI) => {
+    try {
+      const metaData = await axios.get(`/tienda/product/${name}`);
+      thunkAPI.dispatch(setFilteredProducts(metaData.data.product));
+      return metaData.data;
+    } catch (err) {
+      thunkAPI.dispatch(setFilteredProducts([]));
       return err.response.data;
     }
   }

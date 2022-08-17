@@ -7,15 +7,15 @@ function ProductCard({ products }) {
     <div className={style.grid}>
       {products.map((p) => {
         const product = p;
-        const [index, setIndex] = useState(0);
+        // const [index, setIndex] = useState(0);
 
-        const handleClick = (e, product) => {
-          if ((e.target.value = "<") && index > 0) setIndex(index - 1);
-          else if ((e.target.value = ">") && index < product.imagen.length - 1)
-            setIndex(index + 1);
-        };
+        // const handleClick = (e, product) => {
+        //   if ((e.target.value = "<") && index > 0) setIndex(index - 1);
+        //   else if ((e.target.value = ">") && index < product.imagen.length - 1)
+        //     setIndex(index + 1);
+        // };
         return (
-          <div>
+          <div key={product._id}>
             <div className={style.productContainer}>
               <div className={style.description}>
                 <p>{product.nombre}</p>
@@ -33,7 +33,7 @@ function ProductCard({ products }) {
                   {">"}
                 </button>
               </div>
-              <img src={product.imagen[index].data_url} alt="imagen" />
+              <img src={product.imagen[0].data_url} alt="imagen" />
             </div>
           </div>
         );

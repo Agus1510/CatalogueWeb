@@ -13,7 +13,7 @@ function Footer() {
   console.log(GOOGLE_API);
 
   function Map() {
-    const center = useMemo(() => ({ lat: 44, lng: 88 }), {});
+    const center = useMemo(() => ({ lat: 44, lng: 88 }), []);
     return (
       <GoogleMap
         zoom={10}
@@ -38,7 +38,16 @@ function Footer() {
         <div className={style.titles}>
           <h3>Ubicación</h3>
           <div className={style.icons}>
-            {!isLoaded ? <p>loading...</p> : <Map />}
+            <iframe
+              width="600"
+              height="200"
+              id="gmap_canvas"
+              src="https://maps.google.com/maps?q=3901%20N%2033rd%20Ave,%20Hollywood,%20FL%2033021,%20EE.%20UU.&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              frameborder="0"
+              scrolling="no"
+              marginheight="0"
+              marginwidth="0"
+            ></iframe>
           </div>
         </div>
         <div className={style.titles}>

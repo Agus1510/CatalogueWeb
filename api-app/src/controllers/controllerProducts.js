@@ -67,6 +67,28 @@ const getProductGender = async (req, res) => {
   }
 };
 
+const getProductsByName = async (req, res) => {
+  const $regex = req.params.name;
+  try {
+    if (!req.params.name.length) {
+      const product = await Product.find();
+      res.send({ info: "curso encontrado", product, success: true });
+    } else {
+      const product = await Product.find({ nombre: { $regex, $options: "i" } });
+      if (!product.length) {
+        res
+          .status(404)
+          .send({ info: "No existe un curso con ese nombre", success: false });
+      } else {
+        res.send({ info: "curso encontrado", product, success: true });
+      }
+    }
+  } catch (err) {
+    res.send({ info: "Algo salio mal", err, success: false });
+    console.error(err);
+  }
+};
+
 const getProductCategory = async (req, res) => {
   try {
     if (!req.params.gender.length) {
@@ -131,5 +153,6 @@ module.exports = {
   getProducts,
   getProductGender,
   getProductCategory,
+  getProductsByName,
   editProduct,
 };

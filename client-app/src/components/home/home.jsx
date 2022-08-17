@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import style from "./home.module.css";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import ProductCard from "../products/productCard";
+import { getAllProducts } from "../../../redux/actions";
 
 function Home() {
-  const products = useSelector((state) => state.reducerCompleto.allProducts);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getAllProducts());
+  }, [dispatch]);
+
+  const products = useSelector(
+    (state) => state.reducerCompleto.filteredProducts
+  );
   const portada = useSelector((state) => state.reducerCompleto.portada);
   console.log(portada);
   return (
