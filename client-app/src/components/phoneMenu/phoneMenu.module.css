@@ -1,0 +1,38 @@
+.flexContainer{
+    position: fixed;
+    width: 100%;
+    min-height: 100vh;
+    background: none;
+    top:0;
+    z-index: 6;
+
+}
+
+.menu{
+    display: flex;
+    width: 50%;
+    height: 100vh;
+    background-color: rgb(206, 206, 206);
+    flex-direction: column;
+    justify-content: center;
+}
+
+.menu button{
+    background: none;
+    border: none;
+    border-bottom: 1px black solid;
+    font-size: 2em;
+    line-height: 3em;
+}
+
+.menu svg{
+    position:absolute;
+    top:0;
+    width: 2em;
+    height: 2em;
+}
+
+.menu svg:hover{
+    color: red;;
+}
+

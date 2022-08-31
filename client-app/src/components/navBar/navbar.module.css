@@ -87,16 +87,20 @@ html {
     font-size: 1.3em;
 }
 
-.img{
-    height: 100%;
-    position: relative;
-}
 .imgContainer{
     display: flex;
     height: 100%;
+    width: 10%;
     position: absolute;
     opacity: 0.8;
     z-index: 5;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgContainer img{
+    height: 70%;
+    width: 100%;
 }
 
 .category{
@@ -117,8 +121,73 @@ html {
     left: 0;
     transition: opacity .5s;
 }
+.buttonsPhone{
+    display: none;
+    pointer-events: none;
+}
+
+.phoneMenu, .menuIcon{
+    display: none;
+    pointer-events: none;
+}
 
 @media (max-width: 768px) {
 
+    .flexContainer{
+        justify-content: none;
+        flex-direction: column;
+    }
+
+    .flexButtons1{
+        display: none;
+    }
+
+    .flexButtons2{
+        position: absolute;
+        gap: 1.5em;
+        margin-top: 3.7em;
+        right: auto;
+        left: auto;
+        justify-content: space-evenly;
+    }
+
+    .flexButtons2 svg{
+        width: 1.2em;
+        height: 1.2em;
+    }
+    .phoneMenuActive{
+        display: flex;
+        position: absolute;
+        left: 0;
+        pointer-events: auto;
+        background-color: rgb(255, 55, 0);
+    }
+    .menuIcon{
+        display: flex;
+        pointer-events: auto;
+    }
+    .imgContainer{
+        top: 0;
+        display: flex;
+        height: 65%;
+        width: 15%;
+    }
     
+    .imgContainer img{
+    }
+    .inputSearch{
+        width:5em;
+    }
+    .buttonsPhone{
+        display: none;
+        pointer-events: none;
+    }
+    .buttonsPhoneActive{
+        display: flex;
+        background-color: aqua;
+        position: relative;
+        width: 50%;
+        height: 100vh;
+        flex-direction: column;
+    }
 }

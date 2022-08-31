@@ -6,6 +6,8 @@ import {
   IoSearchOutline,
   IoPersonOutline,
   IoHomeOutline,
+  IoEllipsisVertical,
+  IoCloseCircleOutline,
 } from "react-icons/io5";
 import { NavLink } from "react-router-dom";
 import Category from "../category/category";
@@ -16,10 +18,12 @@ import {
   getProductsByGender,
   getProductsByName,
 } from "../../../redux/actions";
+import PhoneMenu from "../phoneMenu/phoneMenu";
 
 function Navbar() {
   const dispatch = useDispatch();
   const [active, setActive] = useState(false);
+  const [activePhone, setActivePhone] = useState(false);
   const [searchError, setSearchError] = useState({});
   const [objCat, setObjCat] = useState({
     img1: "https://taverniti.vteximg.com.br/arquivos/ids/236530/banner1.png?v=637901136712470000",
@@ -386,6 +390,10 @@ function Navbar() {
   useEffect(() => {
     document.addEventListener("click", (e) => {
       const isDropdownButton = e.target.matches("[data-dropdown-button]");
+      const isDropdownPhone = e.target.matches("[data-dropdown-phone]");
+
+      if (!isDropdownPhone && e.target.closest("[data-dropdownPhone]") != null)
+        return;
       if (!isDropdownButton && e.target.closest("[data-dropdown]") != null)
         return;
       let currentDropdown;
@@ -394,6 +402,12 @@ function Navbar() {
       }
       if (!isDropdownButton) {
         setActive(false);
+      }
+      if (isDropdownPhone) {
+        setActivePhone(!activePhone);
+      }
+      if (!isDropdownPhone) {
+        setActivePhone(false);
       }
     });
   }, []);
@@ -416,6 +430,9 @@ function Navbar() {
 
   return (
     <div className={style.flexContainer}>
+      <div className={activePhone ? style.phoneMenuActive : style.phoneMenu}>
+        <PhoneMenu data-dropdownPhone />
+      </div>
       <div className={style.flexButtons1}>
         <button
           value="hombre"
@@ -455,7 +472,7 @@ function Navbar() {
       </div>
       <div className={style.imgContainer}>
         <NavLink to="/">
-          <img src="img/logo.png" alt="logo" className={style.img} />
+          <img src="img/logo.png" alt="logo" />
         </NavLink>
       </div>
       <div
@@ -465,6 +482,7 @@ function Navbar() {
         <Category props={objCat} />
       </div>
       <div className={style.flexButtons2}>
+        <IoEllipsisVertical data-dropdown-phone className={style.menuIcon} />
         <div className={style.search}>
           <form onChange={(e) => search(e)} className={style.form}>
             <IoSearchOutline />
