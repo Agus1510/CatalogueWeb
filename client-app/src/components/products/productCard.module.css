@@ -1,6 +1,6 @@
 .grid {
     width: 100%;
-    height: 50em;
+    min-height: 50em;
     display: grid;
     grid-template-columns: repeat(4, 25%);
     grid-auto-rows: 15em;
@@ -21,7 +21,7 @@
 }
 
 .productContainer img{
-    width: 18em;
+    width: 15em;
     height: 23em;
     transition: opacity .1s;
 }
@@ -72,5 +72,24 @@
 }
 
 @media (max-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(2, 25%);
+        grid-auto-rows: 15em;
+        row-gap: 10em;
+        gap: 7em;
+    }
     
+    .productContainer{
+        margin-left: 4em;
+
+    }
+
+    .productContainer img{
+        width: 8em;
+        height: 12em;
+        transition: opacity .1s;
+    }
+    .buttons{
+        gap:8em;
+    }
 }
