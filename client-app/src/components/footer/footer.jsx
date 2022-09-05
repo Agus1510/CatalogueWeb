@@ -35,7 +35,7 @@ function Footer() {
             <NavLink to="">Instagram</NavLink>
           </div>
         </div>
-        <div className={style.titles}>
+        <div className={style.titlesMap}>
           <h3>Ubicación</h3>
           <div className={style.icons}>
             <iframe

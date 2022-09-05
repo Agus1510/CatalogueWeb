@@ -24,13 +24,20 @@
     margin-bottom: 1em;
     width: 10em;
 }
+.titlesMap{
+    display: flex ;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1em;
+    width: 10em;
+}
 
-.titles h3{
+.titles h3, .titlesMap h3{
     font-weight: 300;
     font-size: 1.3em;
 }
 
-.titles a, .titles p{
+.titles a, .titles p, .titlesMap a, .titlesMap p{
     color: black;
     text-decoration: none;
     font-size: .8em;
@@ -46,4 +53,16 @@
 .mapContainer{
     width: 20em;
     height: 7em;
+}
+
+@media (max-width: 768px) {
+    .titlesMap{
+        justify-self: flex-end
+        ;
+    }
+
+    .footer{
+        flex-direction: column;
+        align-items: center;
+    }
 }
