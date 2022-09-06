@@ -39,7 +39,7 @@ function Footer() {
           <h3>Ubicación</h3>
           <div className={style.icons}>
             <iframe
-              width="600"
+              width="400"
               height="200"
               id="gmap_canvas"
               src="https://maps.google.com/maps?q=3901%20N%2033rd%20Ave,%20Hollywood,%20FL%2033021,%20EE.%20UU.&t=&z=15&ie=UTF8&iwloc=&output=embed"
